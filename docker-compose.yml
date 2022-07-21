@@ -6,7 +6,19 @@ services:
     container_name: mongo-container
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: a-new-unicorn
+      MONGO_INITDB_DATABASE: ${DB_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "27019:27017"
+#    volumes:
+#      - "db-data:/data/db"
+#    networks:
+#      - app_network
+
+#volumes:
+#  db_data:
+#
+#networks:
+#  app_network:
+#    driver: bridge
