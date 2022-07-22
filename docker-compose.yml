@@ -11,10 +11,10 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "27019:27017"
-#    volumes:
-#      - "db-data:/data/db"
-#    networks:
-#      - app_network
+    volumes:
+      - ./db-data:/data/db
+    networks:
+      - app_network
 
   server:
     build: ./backend
