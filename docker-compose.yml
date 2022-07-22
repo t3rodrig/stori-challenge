@@ -16,9 +16,24 @@ services:
 #    networks:
 #      - app_network
 
+  server:
+    build: ./backend
+    image: app-server
+    container_name: server-container
+    environment:
+      PORT: ${SERVER_PORT}
+    expose:
+      - ${SERVER_PORT}
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    volumes:
+      - "./backend:/app"
+    networks:
+      - app_network
+
 #volumes:
 #  db_data:
-#
-#networks:
-#  app_network:
-#    driver: bridge
+
+networks:
+  app_network:
+    driver: bridge
