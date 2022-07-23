@@ -22,6 +22,7 @@ services:
     container_name: server-container
     environment:
       PORT: ${SERVER_PORT}
+      DB_URI: "mongodb://${DB_USERNAME}:${DB_PASSWORD}@db/${DB_DATABASE}"
     expose:
       - ${SERVER_PORT}
     ports:
