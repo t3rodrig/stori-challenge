@@ -5,10 +5,6 @@ services:
     image: mongo
     container_name: mongo-container
     restart: always
-    environment:
-      MONGO_INITDB_DATABASE: ${DB_DATABASE}
-      MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "27019:27017"
     volumes:
@@ -22,7 +18,7 @@ services:
     container_name: server-container
     environment:
       PORT: ${SERVER_PORT}
-      DB_URI: "mongodb://${DB_USERNAME}:${DB_PASSWORD}@db/${DB_DATABASE}"
+      DB_URI: "mongodb://db/${DB_DATABASE}"
     expose:
       - ${SERVER_PORT}
     ports:
