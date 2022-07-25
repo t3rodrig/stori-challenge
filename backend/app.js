@@ -8,6 +8,7 @@ connection();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const newslettersRouter = require("./routes/newsletters");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 // Routes start here
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/api/newsletters", newslettersRouter);
 // catch 404
 app.use((req, res, next) => {
     res.status(404).json({message: "not-found"});
