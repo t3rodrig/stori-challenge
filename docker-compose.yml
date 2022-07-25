@@ -19,6 +19,9 @@ services:
     environment:
       PORT: ${SERVER_PORT}
       DB_URI: "mongodb://db/${DB_DATABASE}"
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
       DUMMY_PASS: ${DUMMY_PASS}
     expose:
       - ${SERVER_PORT}
