@@ -12,7 +12,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: "stori/newsletters",
-        allowedFormats: ["jpg", "png","pdf"],
+        allowed_formats: ["jpg", "png","pdf"],
     }
 });
 
