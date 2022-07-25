@@ -19,6 +19,7 @@ services:
     environment:
       PORT: ${SERVER_PORT}
       DB_URI: "mongodb://db/${DB_DATABASE}"
+      DUMMY_PASS: ${DUMMY_PASS}
     expose:
       - ${SERVER_PORT}
     ports:
